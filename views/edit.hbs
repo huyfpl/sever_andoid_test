@@ -1,0 +1,52 @@
+<form enctype="multipart/form-data" action="/edit"  method="post" class="container" style="padding: 30px;  max-width: 400px; margin: 10px auto; background-color: aquamarine;">
+  <!-- 2 column grid layout with text inputs for the first and last names -->
+  <div class="row mb-4 ">
+    <div class="form-outline mb-4 " style="text-align: center;">
+      <h3> Update</h3>
+    </div>
+    <input type="hidden" name="id" value={{object._id}}>
+     <div class="col">
+      <div class="form-outline">
+        <input type="text" id="masp" class="form-control" name="masp" required value={{object.masp}} />
+        <label class="form-label" for="form3Example2">employee code</label>
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-outline">
+        <input type="text" id="tensp" class="form-control" name="tensp" required value={{object.tensp}} />
+        <label class="form-label" for="form3Example1">tensp</label>
+      </div>
+    </div>
+   
+  </div>
+
+  <!-- Ảnh  input -->
+  <div class="form-outline mb-4">
+    {{#if object.anhsp}}
+    <input type="text" id="anhsp" class="form-control" name="anhsp" value="{{object.anhsp}}" required>
+    <label class="form-label" for="anhsp">Avatar</label>
+    {{else}}
+    <input type="file" id="fileanhsp" name="fileanhsp" accept="image/*" required>
+    <label class="form-label" for="fileanhsp">uploads Avatar</label>
+    {{/if}}
+  </div>
+
+  <!-- Email input -->
+  <div class="form-outline mb-4">
+    <input type="number" id="size" class="form-control" name="size" required
+      value={{object.size}} />
+    <label class="form-label" for="form3Example3">Medium score</label>
+  </div>
+  <div class="form-outline mb-4">
+    <input type="number" id="gia" class="form-control" name="gia" required
+      value={{object.gia}} />
+    <label class="form-label" for="form3Example3">Medium score</label>
+  </div>
+
+
+  <!-- Submit button -->
+  <button type="submit" class="btn btn-primary btn-block mb-4" style="margin: 0 auto;">Edit</button>
+
+
+
+</form>

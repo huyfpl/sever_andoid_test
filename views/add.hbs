@@ -1,0 +1,68 @@
+<form enctype="multipart/form-data" action="/add" method="post" class="container"
+    style="padding: 30px;  max-width: 400px; margin: 10px auto; background-color: aquamarine;">
+    <div class="row mb-4 ">
+        <div class="form-outline mb-4 " style="text-align: center;">
+            <h3> New</h3>
+        </div>
+
+        <div class="col">
+            <div class="form-outline">
+                <input type="text" id="masp" class="form-control" name="masp" required />
+                <label class="form-label" for="masp">employee code</label>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-outline">
+                <input type="text" id="tensp" class="form-control" name="tensp" required autofocus />
+                <label class="form-label" for="tensp">name</label>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="form-outline mb-4">
+        <input type="text" id="anhsp" class="form-control" name="anhsp" />
+        <label class="form-label" for="anhsp">Avatar</label>
+    </div>
+   
+    <div class="form-outline mb-4">
+        <input type="file" id="fileanhsp" class="form-control" name="fileanhsp" />
+        <label class="form-label" for="fileanhsp">Avatar</label>
+    </div>
+
+   
+    <div class="form-outline mb-4">
+        <input type="number" id="size" class="form-control" name="size" required />
+        <label class="form-label" for="size">size</label>
+    </div>
+    <div class="form-outline mb-4">
+        <input type="number" id="gia" class="form-control" name="gia" required />
+        <label class="form-label" for="gia">price</label>
+    </div>
+
+
+    <!-- Submit button -->
+    <button type="submit" class="btn btn-primary btn-block mb-4">add</button>
+
+
+
+
+</form>
+<script>
+    const anhspInput = document.getElementById('anhsp');
+    const fileanhspInput = document.getElementById('fileanhsp');
+    anhspInput.addEventListener('input', () => {
+        if (anhspInput.value) {
+            fileanhspInput.disabled = true;
+        } else {
+            fileanhspInput.disabled = false;
+        }
+    });
+    fileanhspInput.addEventListener('input', () => {
+        if (fileanhspInput.value) {
+            anhspInput.disabled = true;
+        } else {
+            anhspInput.disabled = false;
+        }
+    });
+</script>
